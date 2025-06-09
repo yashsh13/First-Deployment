@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+
+    <a href="/"><h3>Go to home</h3></a>
+    <form action="/edit/{{post.slug}}" method="post">
+
+        <lable>Heading</lable><br>
+        <input type="text" name="heading" value="{{ post.heading }}"><br>
+
+        <lable>Content</lable><br>
+        <textarea name="content">{{ post.content }}</textarea><br>
+
+        <input type="submit" value="Update"><br>
+    </form>
+
+</body>
+</html>

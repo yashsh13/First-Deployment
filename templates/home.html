@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body >
+    
+    <h1 style="text-align: center;">Blog Site</h1>
+    <a href="/posts"><h3>Post</h3></a>
+
+    {% if logged_out %}
+    <a href="/login" style="text-align: right;"><h3>Log in</h3></a>
+    {% endif %}
+
+    {% if logged_in %}
+    <h2 style="text-align: right; color: green;">Logged in as {{ account.username }}</h2>
+    <a href="/logout" style="text-align: right;"><h3>Log out</h3></a>
+    {% endif %}
+
+    {% for p in posts %}
+    <hr>
+    <a href="/page/{{p.slug}}"><h2>{{p.heading}}</h2></a>
+    <p style="width: 700px; overflow: auto;">{{p.content[:300]}} ...</p>
+    <span style="font-weight: bold;">Posted By : {{p.username}}</span>
+    <span style="margin-left: 50px;font-style: italic;">Date : {{p.date}}</span>
+    {% endfor %}
+
+</body>
+</html>

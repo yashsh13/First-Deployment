@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    
+    <a href="/"><h3>Go to home</h3></a>
+    <form action="/login" method="post">
+
+        <lable>Email</lable><br>
+        <input type="email" name="email"><br>
+
+        <lable>Password</lable><br>
+        <input type="password" name="password"><br>
+
+        <input type="submit"><br>
+    </form>
+    <a href="/register"><h3>Dont have an account? Register</h3></a>
+
+    {% if invalid %}
+    <h3 style="color: red;">Invalid Email or Password</h3>
+    {% endif %}
+
+    {% if from_post %}
+    <h2 style="color: red;">You have to be logged in to Post</h2>
+    {% endif %}
+
+</body>
+</html>
